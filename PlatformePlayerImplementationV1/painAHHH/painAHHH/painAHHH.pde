@@ -33,9 +33,9 @@ void setup(){
     size(1400,800);
     background(100);
 
-    player = new Player(this,"hej",400,groundY,0.95,objectW,objectH);
+    player = new Player(this,"Mario.png",400,groundY,0.95,objectW,objectH,3);
 
-    goal = new GameObject(this,"hej",1200,groundY10,0,objectW,objectH);
+    goal = new GameObject(this,"flag.png",1200,groundY10,0,objectW,objectH,1);
 
     youLostButton = new Button(width/2 - 50,300,100,50,"Restart","setup");
     restartButton = new Button(width-101,0,100,50,"Restart","setup");
@@ -43,9 +43,9 @@ void setup(){
     fjender   = new ArrayList<Fjende>();
     platforme = new ArrayList<Platform>();
 
-    fjender.add(new Fjende(this,"hej",225,groundY2,0.6,objectW,objectH,375));
-    fjender.add(new Fjende(this,"hej",900,groundY3,0.6,objectW,objectH,250));
-    fjender.add(new Fjende(this,"hej",225,groundY5,0.6,objectW,objectH,450));
+    fjender.add(new Fjende(this,"Swamp.png",225,groundY2,0.6,objectW,objectH,375,4));
+    fjender.add(new Fjende(this,"Swamp.png",900,groundY3,0.6,objectW,objectH,250,4));
+    fjender.add(new Fjende(this,"Swamp.png",225,groundY5,0.6,objectW,objectH,450,4));
 
     platforme.add(new Platform(this,groundX,groundY,groundW,groundH));
     platforme.add(new Platform(this,groundX2,groundY2,groundW2,platformH));
@@ -57,8 +57,6 @@ void setup(){
     platforme.add(new Platform(this,groundX8,groundY8,groundW8,platformH));
     platforme.add(new Platform(this,groundX9,groundY9,groundW9,platformH));
     platforme.add(new Platform(this,groundX10,groundY10,groundW10,groundH2));
-
-    animation = new Animation(this,"Swamp.png");
 }
 
 void draw() {    

@@ -9,7 +9,7 @@ public class Animation{
     private int wFrame;            //bredde på hver enkelt frame i spritesheet  
     private int hFrame;            //højde på hver enkelt frame i spritesheet  
     private int row, column;       //row og column bruges til at vælge hvilken "nummer" frame
-    private int xFrame=0,yFrame=0; //xFrame og yFrame anvendes til at finde øverste venstre hjørne af denne frame 
+    private int xFrame=0, yFrame=0; //xFrame og yFrame anvendes til at finde øverste venstre hjørne af denne frame 
 
     private int reverseFactor = 1; //reverseFactor bruges til at spejlvende en frame
 

@@ -4,8 +4,8 @@ public class Player extends GameObject{
 
     private PApplet p;
 
-    public Player(PApplet p, String filename, int x, int y, float s, int w, int h){
-        super(p,filename,x,y,s,w,h);
+    public Player(PApplet p, String filename, int x, int y, float s, int w, int h, int a){
+        super(p,filename,x,y,s,w,h,a);
         this.p = p;
     }   
 
