@@ -25,7 +25,7 @@ public class Player extends GameObject{
 
     public void playerDisplay(){
         //dette er bare info-tekst
-        p.text("UP: " + moveUp + "\n LEFT: " + moveLeft + "\n RIGHT: " + moveRight + "\n onGround: " + onGround, 10, 20);
+        p.text(" UP: " + moveUp + "\n LEFT: " + moveLeft + "\n RIGHT: " + moveRight + "\n onGround: " + onGround, 10, 20);
         p.text("POSITION : " + (int)position.x + " : " + (int)position.y, 300, 20);
         p.text("GROUND POSITION : " + groundPositionY, 300, 40);
     }
