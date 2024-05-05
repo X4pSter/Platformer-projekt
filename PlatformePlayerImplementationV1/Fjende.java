@@ -6,13 +6,15 @@ public class Fjende extends GameObject{
 
     private int c = -5;
 
-    public Fjende(PApplet p, int x, int y, float s, int w, int h){
+    private int time;
+
+    public Fjende(PApplet p, int x, int y, float s, int w, int h, int t){
         super(p,x,y,s,w,h);
         this.p = p;
+        time = t;
     }
 
     public void movement(){
-        int time = 220;
         c = (c + 1) % time;
         if(c < time/2){
             moveRight = true;
@@ -21,5 +23,7 @@ public class Fjende extends GameObject{
             moveRight = false;
             moveLeft = true;
         }
+        
     }
+
 }

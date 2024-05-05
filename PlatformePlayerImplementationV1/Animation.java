@@ -23,11 +23,11 @@ public class Animation{
 
 
     public void display(int posX, int posY){
-        if(p.frameCount%5==0){ //animationen er lidt hurtig, så jeg ændrer kun frame hver 5. billede
+        if(p.frameCount%10==0){ //animationen er lidt hurtig, så jeg ændrer kun frame hver 5. billede
     
             //udvælgelse af næste frame
-            if (column<4){ column++; }    
-            if (column==4)  { column=0;    }
+            if (column<4)   { column++; }    
+            if (column==4)  { column=0; }
             //Tallet 25 er korigering fordi tegningerne på mit spritsheet er for langt til venstre!
             xFrame = (column)*wFrame;  
         }

@@ -1,5 +1,6 @@
 Player player;
 Fjende fjende;
+Animation animation;
 
 ArrayList<Platform> platforme = new ArrayList<Platform>();
 
@@ -14,10 +15,11 @@ void setup() {
     size(1400,500);
     background(50);
     player = new Player(this,400,groundY,0.95,playerW,playerH);
-    fjende = new Fjende(this,850,groundY3,0.75,fjendeW,fjendeH);
+    fjende = new Fjende(this,850,groundY3,0.625,fjendeW,fjendeH,300);
     platforme.add(new Platform(this,groundX,groundY,groundW,groundH));
     platforme.add(new Platform(this,groundX2,groundY2,groundW2,groundH2));
     platforme.add(new Platform(this,groundX3,groundY3,groundW3,groundH3));
+    animation = new Animation(this,"Swamp.png");
 }
 
 void draw() {    
@@ -39,13 +41,15 @@ void draw() {
     }
 
     PVector temp = fjende.position;
-    println(player.handleObjectCollision(temp.x,temp.y,fjendeW,fjendeH));
+
+    text(str(player.handleObjectCollision(temp.x,temp.y,fjendeW,fjendeH)),800,150);
 
     player.displayAndUpdatePhysics();
     player.playerDisplay();
     fjende.displayAndUpdatePhysics();
     fjende.movement();
     
+    //animation.display(mouseX,mouseY);
 }
 
 void keyPressed() {
@@ -56,3 +60,6 @@ void keyReleased() {
     player.keyReleased();
 }
 
+void mousePressed(){
+    animation.reverseImage();
+}

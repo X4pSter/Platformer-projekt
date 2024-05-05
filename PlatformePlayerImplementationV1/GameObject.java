@@ -46,24 +46,27 @@ public class GameObject{
 
     public boolean handlePlatformCollision(int x, int y, int w, int h){
         boolean isCollided = position.x+width/2 > x && position.x+width/2 < x+w && position.y > y && position.y < y+h || position.x-width/2 > x && position.x-width/2 < x+w && position.y > y && position.y < y+h;
-        this.groundPositionY = y+1;
+        if(isCollided){this.groundPositionY = y + 1;}
         this.onGround = isCollided;
         boolean isCollidedTop = position.x+width/2 > x && position.x+width/2 < x+w && position.y > y+height && position.y < y+h+height || position.x-width/2 > x && position.x-width/2 < x+w && position.y > y+height && position.y < y+h+height;
-        if(isCollidedTop){velocity.y = 0;}
+        if(isCollidedTop){velocity.y = -acceleration.y;}
         return isCollided;
     }
-    /*
+    
     public boolean handleObjectCollision(float x, float y, int w, int h){
-        boolean isCollided = position.x+width/2 > x && position.x+width/2 < x+w && position.y > y && position.y < y+h || position.x-width/2 > x && position.x-width/2 < x+w && position.y > y && position.y < y+h;
-        boolean isCollidedTop = position.x+width/2 > x && position.x+width/2 < x+w && position.y > y+height && position.y < y+h+height || position.x-width/2 > x && position.x-width/2 < x+w && position.y > y+height && position.y < y+h+height;
-        if(isCollidedTop){velocity.y = 0;}
+        boolean isCollided = false; 
+        //boolean isCollided = position.x >= x && position.x <= x + w && position.y >= y && position.y <= y + h || position.x >= x - 50 && position.x <= x + w - 50 && position.y >= y && position.y <= y + h;
+        if(position.x >= x && position.x <= x + w && position.y >= y && position.y <= y + h || position.x >= x - 50 && position.x <= x + w - 50 && position.y >= y && position.y <= y + h){
+            isCollided = true;
+        }
         return isCollided;
     }
-    */
+    
     private void display(){
         //tegning af spilleren
         p.fill(255);
         p.textSize(20);
         p.rect(position.x-25, position.y-50, width, height);
+        p.ellipse(position.x,position.y,5,5);
     }
 }
