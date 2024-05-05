@@ -15,13 +15,13 @@ public class GameObject extends Animation{
     private float   speed;
 
     public GameObject(PApplet p, String filename, int x, int y, float s, int w, int h){
+        super(p,filename);
         this.p          = p;
         groundPositionY = y;
         speed           = s;
         width           = w;
         height          = h;
         position.set(x,y);
-        super(p,filename);
     }   
 
     private void updatePhysics(){
