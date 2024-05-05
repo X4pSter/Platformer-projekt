@@ -1,6 +1,6 @@
 import processing.core.*;
 
-public class GameObject{
+public class GameObject extends Animation{
     
     private PApplet p;
 
@@ -14,7 +14,8 @@ public class GameObject{
     public  int     width, height;
     private float   speed;
 
-    public GameObject(PApplet p, int x, int y, float s, int w, int h){
+    public GameObject(PApplet p, String fileName, int x, int y, float s, int w, int h, int a){
+        super(p,fileName,a);
         this.p          = p;
         groundPositionY = y;
         speed           = s;
@@ -57,11 +58,15 @@ public class GameObject{
         boolean isCollided = position.x >= x && position.x <= x + w && position.y >= y && position.y <= y + h || position.x >= x - 50 && position.x <= x + w - 50 && position.y >= y && position.y <= y + h;
         return isCollided;
     }
-    
-    private void display(){
-        //tegning af spilleren
-        p.fill(255);
-        p.textSize(20);
-        p.rect(position.x-25, position.y-50, width, height);
+
+    public void display(){
+        super.display2(position.x,position.y);
+
+        if(velocity.x > 0){
+            reverseFactor = 1;
+        }
+        if(velocity.x < 0){
+            reverseFactor = -1;
+        }
     }
 }

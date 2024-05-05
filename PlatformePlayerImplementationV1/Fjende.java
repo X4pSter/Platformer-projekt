@@ -8,8 +8,8 @@ public class Fjende extends GameObject{
 
     private int time;
 
-    public Fjende(PApplet p, int x, int y, float s, int w, int h, int t){
-        super(p,x,y,s,w,h);
+    public Fjende(PApplet p, String fileName, int x, int y, float s, int w, int h, int t, int a){
+        super(p,fileName,x,y,s,w,h,a);
         this.p = p;
         time = t;
     }
