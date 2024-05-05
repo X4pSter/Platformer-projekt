@@ -7,15 +7,23 @@ ArrayList<Fjende>   fjender;
 
 // data for tre forskellige platforme
 int groundX = 200, groundY = 700, groundW = 1000, groundH = 100;  
-int groundX2 = 200, groundY2 = 600, groundW2 = 325, groundH2 = 10;
-int groundX3 = 850, groundY3 = 550, groundW3 = 300, groundH3 = 10;
-int groundX4 = 700, groundY4 = 450, groundW4 = 75, groundH4 = 10;
+int groundX2 = 200, groundY2 = 600, groundW2 = 325;
+int groundX3 = 850, groundY3 = 550, groundW3 = 300;
+int groundX4 = 700, groundY4 = 450, groundW4 = 75;
+int groundX5 = 200, groundY5 = 350, groundW5 = 400;
+int groundX6 = 75, groundY6 = 300, groundW6 = 75;
+int groundX7 = 250, groundY7 = 200, groundW7 = 150;
+int groundX8 = 550, groundY8 = 75, groundW8 = 75;
+int groundX9 = 750, groundY9 = 125, groundW9 = 75;
+int groundX10 = 900, groundY10 = 300, groundW10 = 500; groundH2 = 25;
+int platformH = 10;
+
 int playerW = 50, playerH = 50;
 int fjendeW = 50, fjendeH = 50;
 
 boolean lost;
 
-void setup() {
+void setup(){
     lost = false;
     size(1400,800);
     background(100);
@@ -26,13 +34,20 @@ void setup() {
     fjender   = new ArrayList<Fjende>();
     platforme = new ArrayList<Platform>();
 
-    fjender.add(new Fjende(this,900,groundY3,0.6,fjendeW,fjendeH,250));
     fjender.add(new Fjende(this,225,groundY2,0.6,fjendeW,fjendeH,375));
+    fjender.add(new Fjende(this,900,groundY3,0.6,fjendeW,fjendeH,250));
+    fjender.add(new Fjende(this,225,groundY5,0.6,fjendeW,fjendeH,500));
 
     platforme.add(new Platform(this,groundX,groundY,groundW,groundH));
-    platforme.add(new Platform(this,groundX2,groundY2,groundW2,groundH2));
-    platforme.add(new Platform(this,groundX3,groundY3,groundW3,groundH3));
-    platforme.add(new Platform(this,groundX4,groundY4,groundW4,groundH4));
+    platforme.add(new Platform(this,groundX2,groundY2,groundW2,platformH));
+    platforme.add(new Platform(this,groundX3,groundY3,groundW3,platformH));
+    platforme.add(new Platform(this,groundX4,groundY4,groundW4,platformH));
+    platforme.add(new Platform(this,groundX5,groundY5,groundW5,platformH));
+    platforme.add(new Platform(this,groundX6,groundY6,groundW6,platformH));
+    platforme.add(new Platform(this,groundX7,groundY7,groundW7,platformH));
+    platforme.add(new Platform(this,groundX8,groundY8,groundW8,platformH));
+    platforme.add(new Platform(this,groundX9,groundY9,groundW9,platformH));
+    platforme.add(new Platform(this,groundX10,groundY10,groundW10,groundH2));
 
     animation = new Animation(this,"Swamp.png");
 }
