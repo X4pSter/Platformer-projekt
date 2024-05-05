@@ -15,7 +15,7 @@ int groundX6 = 75, groundY6 = 300, groundW6 = 75;
 int groundX7 = 250, groundY7 = 200, groundW7 = 150;
 int groundX8 = 550, groundY8 = 75, groundW8 = 75;
 int groundX9 = 750, groundY9 = 125, groundW9 = 75;
-int groundX10 = 900, groundY10 = 300, groundW10 = 500; groundH2 = 25;
+int groundX10 = 900, groundY10 = 300, groundW10 = 500, groundH2 = 25;
 int platformH = 10;
 
 int playerW = 50, playerH = 50;
