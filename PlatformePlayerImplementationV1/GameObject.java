@@ -11,7 +11,7 @@ public class GameObject{
     public  boolean moveUp, moveLeft, moveRight;
     public  boolean onGround;
     public  int     groundPositionY;
-    private int     width, height;
+    public  int     width, height;
     private float   speed;
 
     public GameObject(PApplet p, int x, int y, float s, int w, int h){
@@ -52,13 +52,9 @@ public class GameObject{
         if(isCollidedTop){velocity.y = -acceleration.y;}
         return isCollided;
     }
-    
+
     public boolean handleObjectCollision(float x, float y, int w, int h){
-        boolean isCollided = false; 
-        //boolean isCollided = position.x >= x && position.x <= x + w && position.y >= y && position.y <= y + h || position.x >= x - 50 && position.x <= x + w - 50 && position.y >= y && position.y <= y + h;
-        if(position.x >= x && position.x <= x + w && position.y >= y && position.y <= y + h || position.x >= x - 50 && position.x <= x + w - 50 && position.y >= y && position.y <= y + h){
-            isCollided = true;
-        }
+        boolean isCollided = position.x >= x && position.x <= x + w && position.y >= y && position.y <= y + h || position.x >= x - 50 && position.x <= x + w - 50 && position.y >= y && position.y <= y + h;
         return isCollided;
     }
     
@@ -67,6 +63,5 @@ public class GameObject{
         p.fill(255);
         p.textSize(20);
         p.rect(position.x-25, position.y-50, width, height);
-        p.ellipse(position.x,position.y,5,5);
     }
 }
